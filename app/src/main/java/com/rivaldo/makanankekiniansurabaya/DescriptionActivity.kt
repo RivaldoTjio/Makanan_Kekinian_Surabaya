@@ -11,11 +11,10 @@ class DescriptionActivity : AppCompatActivity() {
         setContentView(R.layout.activity_description)
 
         val getbundle = intent.getBundleExtra("selecteddata")
+        val image = getbundle?.getInt("image")
+        image?.let { image_decs.setImageResource(it) }
         if (getbundle != null) {
             txt_judul.text = getbundle.getString("nama")
-        }
-        if (getbundle != null) {
-            img_view.setImageResource(getbundle.getInt("image"))
         }
         if (getbundle != null) {
             desc.text = getbundle.getString("desc")

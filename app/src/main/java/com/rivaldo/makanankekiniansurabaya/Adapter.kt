@@ -20,6 +20,9 @@ class Adapter(val list:ArrayList<Food>) : RecyclerView.Adapter<Adapter.Holder>()
                 img_view.setImageResource(fooditems.image)
                 tv_name.text = fooditems.name
                 tv_desc.text = fooditems.description
+                itemView.setOnClickListener {
+                    onItemClickCallback?.onItemClicked(fooditems)
+                }
             }
        }
     }
